@@ -21,6 +21,17 @@ body {
 }
 
 
+h1 {
+  margin-bottom: 20px;
+}
+
+#lyrics {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+
 .night {
   position: fixed;
   left: 50%;

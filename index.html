@@ -14,10 +14,22 @@
 <!-- partial:index.partial.html -->
 
 
-<body class="container">
-  <audio src="Sebastián Yatra, Pablo Alborán - Contigo (KARAOKE - INSTRUMENTAL) - Karaoke Live (youtube).mp3" autoplay></audio>
-  <div id="lyrics">
-     
+<body class="container"  onclick="playAudio()">
+  <h1>Reproduce Sonido al Tocar</h1>
+    <audio id="audio" src="Sebastián Yatra, Pablo Alborán - Contigo (KARAOKE - INSTRUMENTAL) - Karaoke Live (youtube).mp3"></audio>
+    <div id="lyrics">
+        <!-- Aquí puedes agregar la letra de la canción -->
+    </div>
+
+    <script>
+        function playAudio() {
+            const audio = document.getElementById('audio');
+            audio.play().catch(error => {
+                console.error('Error al intentar reproducir el audio:', error);
+            });
+        }
+    </script>
+
   </div>
 
   <div id="texto-container"></div>
