@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un abrazo y mucho amor</title>
+    <style>
+        /* Estilo general */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffccd5;
+            overflow: hidden;
+        }
+
+        /* Sección del abrazo virtual */
+        .hug-container {
+            text-align: center;
+            padding: 20px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .hug {
+            font-size: 2rem;
+            margin-top: 50px;
+        }
+
+        .emoji {
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            transform: translateY(0);
+            to {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Sección del corazón parpadeante */
+        .heart-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+
+        .heart {
+            font-size: 10rem;
+            color: #ff5e78;
+            animation: blink 1s infinite;
+            opacity: 1;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        /* Recuadro de "Te quiero" */
+        .message-box {
+            position: absolute;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 100px;
+            background-color: #fff;
+            border: 2px solid #ff5e78;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ff5e78;
+            font-family: Arial, sans-serif;
+            animation: expand 10s forwards;
+            z-index: 10;
+        }
+
+ /* Ajuste para centrar el texto cuando se expande */
+        .message-box span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        @keyframes expand {
+            0% {
+                transform: scale(1);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(100);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Abrazo virtual -->
+    <div class="hug-container">
+        <h1>¡Te envío un gran abrazo virtual! 🤗</h1>
+        <div class="hug">
+            <span class="emoji">🤗</span>🤗<span class="emoji">🤗</span>
+        </div>
+        <p>Esto es un pequeño gesto para que sepas que alguien piensa en ti. ❤️</p>
+    </div>
+
+    <!-- Corazón parpadeante -->
+    <div class="heart-container">
+        <div class="heart">❤️</div>
+    </div>
+
+    <!-- Recuadro de "Te quiero" -->
+    <div class="message-box">Te quiero</div>
+
+    <script>
+        // Controlar el flujo de las animaciones
+        const heart = document.querySelector('.heart');
+        const messageBox = document.querySelector('.message-box');
+
+        // Desaparece el corazón después de parpadear 5 veces (5s)
+        setTimeout(() => {
+            heart.style.display = 'none';
+            messageBox.style.display = 'flex'; // Mostrar el recuadro
+        }, 5000);
+    </script>
+</body>
+</html>

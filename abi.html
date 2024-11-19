@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te quiero ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffccd5;
+            overflow: hidden;
+        }
+
+        .heart {
+            font-size: 10rem;
+            color: #ff5e78;
+            animation: blink 1s infinite;
+            opacity: 1;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .message-box {
+            position: absolute;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: 150px;
+            height: 100px;
+            background-color: #fff;
+            border: 2px solid #ff5e78;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ff5e78;
+            font-family: Arial, sans-serif;
+            animation: expand 20s forwards;
+        }
+
+        @keyframes expand {
+            0% {
+                transform: scale(1);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: scale(100);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">❤️</div>
+    <div class="message-box">Te quiero<br> no estes triste 💝💝💝</div>
+
+    <script>
+        // Controlar el flujo de las animaciones
+        const heart = document.querySelector('.heart');
+        const messageBox = document.querySelector('.message-box');
+
+        // Desaparece el corazón después de parpadear 5 veces (5s)
+        setTimeout(() => {
+            heart.style.display = 'none';
+            messageBox.style.display = 'flex'; // Mostrar el recuadro
+        }, 5000);
+    </script>
+</body>
+</html>
