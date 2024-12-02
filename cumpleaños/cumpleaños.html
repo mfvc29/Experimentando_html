@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Cumpleaños con Corazones</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            background: radial-gradient(circle, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            transform: scale(0);
+            animation: pop 2s ease-in-out forwards;
+            fill: #ff6f91;
+            z-index: -1;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+ .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 30px 40px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #ff6f91;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            animation: fadeIn 4s ease-in-out;
+            box-shadow: 0 5px 15px rgba(255, 111, 145, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 1;
+        }
+
+.button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 111, 145, 0.6);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">¡Feliz Cumpleaños, Abi!</div>
+        <div class="subtitle">Espero que este día esté lleno de amor, alegría y mucha felicidad.</div>
+        <div class="button-container">
+            <a class="button" href="#" onclick="alert('¡Te quiero con todo mi corazón! 🎉 \n¡Que disfrutes mucho tus 21 años! 🎂\nMe alegra estar juntos en este día especial. ❤️‍🩹')">Te quiero ❤</a>
+        </div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+
+    <script>
+        // Variable para controlar la cantidad de corazones a generar
+        const totalCorazones = 500; // Cambia este valor para ajustar la cantidad
+        const intervalo = 100; // Intervalo en milisegundos entre corazones (10 segundos)
+
+        // Función para generar un corazón
+        function crearCorazonAleatorio() {
+            const container = document.querySelector('.container');
+
+            // Crear el elemento SVG del corazón
+            const heart = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            heart.setAttribute('viewBox', '0 0 32 32');
+            heart.setAttribute('class', 'heart');
+
+            // Crear el path dentro del SVG
+            const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute(
+                'd',
+                'M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z'
+            );
+
+            heart.appendChild(path);
+
+            // Asignar una posición aleatoria
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+
+            // Insertar en el contenedor
+            container.appendChild(heart);
+
+            // Eliminar el corazón después de 10 segundos
+            setTimeout(() => {
+                container.removeChild(heart);
+            }, 10000);
+        }
+
+        // Generar corazones según la cantidad especificada
+        let count = 0;
+        const intervalId = setInterval(() => {
+            if (count < totalCorazones) { 
+                crearCorazonAleatorio();
+                count++;
+            } else {
+                clearInterval(intervalId); // Detener el intervalo cuando se alcanza el límite
+            }
+        }, intervalo);
+    </script>
+</body>
+</html>
