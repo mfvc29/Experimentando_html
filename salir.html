@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Romántica</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            margin: 0;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            max-width: 300px;
+        }
+        .card h1 {
+            color: #e91e63;
+            font-family: 'Cursive', sans-serif;
+        }
+        .card p {
+            color: #333;
+            font-family: 'Arial', sans-serif;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            animation: blink 5s infinite;
+        }
+        @keyframes blink {
+            0%, 50%, 100% {
+                opacity: 1;
+            }
+            25%, 75% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>¿Quieres salir conmigo?</h1>
+        <p>❤️</p>
+        <img src="https://i.pinimg.com/736x/f8/aa/3a/f8aa3a856fa2dc324261b13e1a326d57.jpg" alt="Imagen romántica">
+    </div>
+</body>
+</html>
