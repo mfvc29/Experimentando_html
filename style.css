@@ -1873,13 +1873,14 @@ h1 {
 .heart {
   fill: transparent;
   opacity: 0;
+  fill: red;
 }
 .bubble:nth-child(1) .heart {
   -webkit-animation: love 3s forwards infinite 0s;
   animation: love 3s forwards infinite 0s;
   -webkit-transform: scale(0.5) rotate(-4deg);
   transform: scale(0.5) rotate(-4deg);
-  fill: red;
+  
 }
 .bubble:nth-child(2) .heart {
   -webkit-animation: love 3s forwards infinite 0.15s;
