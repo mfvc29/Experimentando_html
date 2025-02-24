@@ -1879,6 +1879,7 @@ h1 {
   animation: love 3s forwards infinite 0s;
   -webkit-transform: scale(0.5) rotate(-4deg);
   transform: scale(0.5) rotate(-4deg);
+  fill: red;
 }
 .bubble:nth-child(2) .heart {
   -webkit-animation: love 3s forwards infinite 0.15s;
